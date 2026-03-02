@@ -1,0 +1,11 @@
+@if (character(); as c) {
+  <button routerLink="/">Volver</button>
+
+  <h2>{{ c.name }}</h2>
+
+  <img [src]="c.image" [alt]="c.name" width="200">
+
+  <p><strong>Status:</strong> {{ c.status }}</p>
+  <p><strong>Species:</strong> {{ c.species }}</p>
+  <p><strong>Gender:</strong> {{ c.gender }}</p>
+}

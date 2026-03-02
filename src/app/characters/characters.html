@@ -1,0 +1,17 @@
+<h1>Personajes</h1>
+
+<div class="grid">
+  @for (character of characters(); track character.id) {
+    <div
+      class="card"
+      role="button"
+      tabindex="0"
+      [attr.aria-label]="character.name"
+      (click)="goToDetail(character.id)"
+      (keydown.enter)="goToDetail(character.id)"
+    >
+      <img [ngSrc]="character.image" [alt]="character.name" width="300" height="300" />
+      <p class="name">{{ character.name }}</p>
+    </div>
+  }
+</div>

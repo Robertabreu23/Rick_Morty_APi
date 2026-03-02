@@ -1,0 +1,83 @@
+.app-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2.5rem;
+  background: linear-gradient(135deg, #0a2e1f 0%, #0d3d28 40%, #0a2e1f 100%);
+  border-bottom: 2px solid #55dda0;
+  box-shadow: 0 4px 24px rgba(85, 221, 160, 0.2);
+  overflow: hidden;
+}
+
+/* Subtle animated glow line at the bottom */
+.app-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #55dda0, transparent);
+  animation: scanline 3s ease-in-out infinite;
+}
+
+@keyframes scanline {
+  0%   { left: -60%; }
+  100% { left: 140%; }
+}
+
+.app-header__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.app-header__title {
+  margin: 0;
+  color: #55dda0;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(85, 221, 160, 0.6);
+}
+
+.app-header__subtitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+}
+
+/* Mini portal decorations */
+.app-header__portal {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(85, 221, 160, 0.15) 0%, transparent 70%);
+  border: 2px solid rgba(85, 221, 160, 0.35);
+  animation: portalBreath 3s ease-in-out infinite;
+}
+
+.app-header__portal:last-child {
+  animation-delay: 1.5s;
+}
+
+@keyframes portalBreath {
+  0%, 100% { transform: scale(1);    opacity: 0.5; }
+  50%       { transform: scale(1.15); opacity: 1;   }
+}
+
+.bg-color {
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('/morty_smith_rick_sanchez_black_background_4k_hd_rick_and_morty-1280x720.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 2rem;
+}
+

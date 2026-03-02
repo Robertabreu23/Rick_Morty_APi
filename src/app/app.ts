@@ -1,12 +1,20 @@
-import { Component, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Loading } from './loading/loading';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [RouterOutlet, Loading],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
-export class App {
-  protected readonly title = signal('Rick_Morty_Api');
+export class App implements OnInit {
+  readonly showLoading = signal(true);
+  readonly isHidingLoading = signal(false);
+
+  ngOnInit(): void {
+    setTimeout(() => this.isHidingLoading.set(true), 2500);
+    setTimeout(() => this.showLoading.set(false), 3200);
+  }
 }
