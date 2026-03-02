@@ -1,5 +1,8 @@
 @if (character(); as c) {
-  <button routerLink="/">Volver</button>
+  <button class="back-btn" routerLink="/">
+    <span class="arrow">&#8592;</span>
+    <span>Volver</span>
+  </button>
 
   <h2>{{ c.name }}</h2>
 

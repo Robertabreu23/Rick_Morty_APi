@@ -2,3 +2,47 @@ h2, p {
   color: white;
   font-weight: bold;
 }
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: transparent;
+  color: #97ce4c;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 2px solid #97ce4c;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: background 0.25s, color 0.25s, transform 0.15s, box-shadow 0.25s;
+  margin-bottom: 16px;
+}
+
+.back-btn .arrow {
+  display: inline-block;
+  transition: transform 0.25s;
+  font-size: 1.2rem;
+}
+
+.back-btn:hover {
+  background: #97ce4c;
+  color: #1a1a2e;
+  box-shadow: 0 0 12px #97ce4caa;
+}
+
+.back-btn:hover .arrow {
+  transform: translateX(-5px);
+}
+
+.back-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 6px #97ce4c66;
+}
+
+.back-btn:focus-visible {
+  outline: 3px solid #97ce4c;
+  outline-offset: 3px;
+}
+
